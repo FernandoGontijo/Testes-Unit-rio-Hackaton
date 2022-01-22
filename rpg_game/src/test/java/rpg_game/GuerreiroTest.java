@@ -3,6 +3,7 @@ package rpg_game;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,6 +15,13 @@ public class GuerreiroTest extends PersonagemTest {
     @Before
     public void setUp()  {
         guerreiro = new Guerreiro("guerreiro");
+
+        botaBronze = new BotaBronze();
+
+        botaPrata = new BotaPrata();
+
+        personagem = Mockito.mock(Personagem.class);
+
     }
 
     @Test
@@ -35,5 +43,11 @@ public class GuerreiroTest extends PersonagemTest {
     public void testAtaque2() {
         guerreiro.ataque2();
         assertEquals(10, 10);
+    }
+
+    @Test
+    public void testEquiparBota() {
+        personagem.EquiparBota(botaBronze);
+        personagem.EquiparBota(botaPrata);
     }
 }

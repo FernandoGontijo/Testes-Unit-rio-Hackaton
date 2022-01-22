@@ -15,6 +15,12 @@ public class ArqueiroTest extends PersonagemTest {
     @Before
     public void setUp()  {
         arqueiro = new Arqueiro("arqueiro");
+
+        botaBronze = new BotaBronze();
+
+        botaPrata = new BotaPrata();
+
+        personagem = Mockito.mock(Personagem.class);
     }
 
     @Test
@@ -37,5 +43,11 @@ public class ArqueiroTest extends PersonagemTest {
     public void testAtaque2() {
         arqueiro.ataque2();
         assertEquals(10, 10);
+    }
+
+    @Test
+    public void testEquiparBota() {
+        personagem.EquiparBota(botaBronze);
+        personagem.EquiparBota(botaPrata);
     }
 }
